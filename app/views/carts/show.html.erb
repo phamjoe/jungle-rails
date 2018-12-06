@@ -41,7 +41,7 @@
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-amount="<%= cart_subtotal_cents %>"
           data-name="Jungle"
-          data-description="Khurram Virani's Jungle Order"
+          data-description="Some Guy's Jungle Order"
           data-locale="auto"
           data-email="kvirani@gmail.com"
           data-currency="cad">
@@ -58,7 +58,7 @@
   </div>
     
     <div class="well">
-      <%= link_to '+ Back to Dashboard', [:products], class: 'btn btn-info' %>
+      <%= link_to '< Back to Dashboard', [:products], class: 'btn btn-info' %>
     </div>
   <% end%>
 </section>
