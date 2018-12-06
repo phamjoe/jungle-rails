@@ -4,6 +4,7 @@
     <h1>My Cart</h1>
   </header>
 
+  <% if cart.present? %>
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -48,5 +49,16 @@
       <% end %>
     </div>
   </div>
-
+  <% else %>
+    <div class="order-summary jumbotron">
+    <h4>Looks like your cart is empty!<br/>It's hard to buy something when there is nothing to buy</h4>
+    <% if current_user %>
+      Order details were also sent to  <b><%= current_user.email %></b></h4>
+    <% end %>
+  </div>
+    
+    <div class="well">
+      <%= link_to '+ Back to Dashboard', [:products], class: 'btn btn-info' %>
+    </div>
+  <% end%>
 </section>
