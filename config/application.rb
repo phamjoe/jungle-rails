@@ -34,6 +34,7 @@ module Jungle
       g.helper       false
       g.assets       false
     end
+    config.action_mailer.preview_path = "#{Rails.root}/test/mailers/previews"
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
