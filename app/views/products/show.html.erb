@@ -25,11 +25,11 @@
           <dt>Average Rating</dt>
           <dd><%= @product.reviews.average(:rating).present? ? @product.reviews.average(:rating).round(2) : 0 %></dd>
           <br/>
+
+          <% if current_user %>
           <dd><b>Leave a Review<b></dd>
           <hr>
           <br/>
-
-          <% if current_user %>
           <%= form_for [@product, Review.new] do |form| %>
               <% if form.object.errors.any? %>
                 <div class="alert alert-danger">
@@ -60,20 +60,20 @@
   <hr>
     <div class="row">
     <% @product.reviews.order(created_at: :desc).each do |review| %>
-    <div class="col-sm-4">
+    <div class="col-sm-3">
      Rating: <%= review.rating %> / 5
       </div>
       <div class="col-sm-8">
         <dl class="dl-horizontal">
           <dt><%= review.user.first_name %>  <%= review.user.last_name%></dt>
           <dd><%= review.description %>
-
           <% if current_user && current_user.id == review.user_id %>
-            <%= link_to fa_icon('trash'), [@product, review], class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>
+            <%= link_to fa_icon('trash'), [@product, review], class: 'btn btn-xs btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>
           <% end %>
           </dd>
         </dl>
-      </div>
+
+        </div>
       <% end %>
     </div>
   </article>
