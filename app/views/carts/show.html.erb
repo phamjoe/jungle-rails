@@ -52,9 +52,6 @@
   <% else %>
     <div class="order-summary jumbotron">
     <h4>Looks like your cart is empty!<br/>It's hard to buy something when there is nothing to buy</h4>
-    <% if current_user %>
-      Order details were also sent to  <b><%= current_user.email %></b></h4>
-    <% end %>
   </div>
     
     <div class="well">

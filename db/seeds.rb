@@ -132,31 +132,22 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+puts "Creating User"
+User.destroy_all
+
+User.create!({
+  first_name: 'Bob',
+  last_name:  'Barker',
+  email: 'thepriceis@right.com',
+  password: '123'
+})
+
 puts "Creating Reviews"
 Review.destroy_all
 
 Review.create!({
   product_id: 1,
   user_id: 1,
-  description: 'No.',
-  rating: 5
-})
-
-Review.create!({
-  product_id: 1,
-  user_id: 1,
-  description: 'Great product',
-  rating: 5
-})
-Review.create!({
-  product_id: 1,
-  user_id: 2,
-  description: 'Worst product',
-  rating: 1
-})
-Review.create!({
-  product_id: 2,
-  user_id: 2,
   description: 'I dont know how to use this thing',
   rating: 2
 })

@@ -14,12 +14,16 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    if current_user.id == @review.user.id
       @review = Review.find params[:id]
       @product = Product.find_by(id: params[:product_id])
+    if @review.user_id == current_user.id
       @review.destroy
       redirect_to product_path(@product), notice: 'Review deleted!'
+    else
+      redirect_to product_path(@product)
     end
+
+
   end
 
   private
