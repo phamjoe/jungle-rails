@@ -27,6 +27,12 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 * PostgreSQL 9.x
 * Stripe
 
+## Features
+* Users can sign up an account
+* Users with an account can rate and review products. They can also delete their own comments
+* Visitors can only read reviews
+* Logged in Users will receive an order summary sent to their email after completing purchase 
+
 ## Final Product
 1. Main Page
 !["Screenshot of Dashboard" ](https://github.com/phamjoe/jungle-rails/blob/master/screenshots/home.png)
